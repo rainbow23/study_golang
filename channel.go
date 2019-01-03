@@ -78,31 +78,64 @@ func main() {
 	// }
 	// fmt.Println(c)
 
-	m := map[string]int{"apple": 100, "banana": 200}
-	fmt.Println(m)
-	fmt.Println(m["apple"])
-	m["banana"] = 300
-	fmt.Println(m)
-	m["new"] = 500
-	fmt.Println(m)
-	fmt.Println(m["nothing"])
+	// m := map[string]int{"apple": 100, "banana": 200}
+	// fmt.Println(m)
+	// fmt.Println(m["apple"])
+	// m["banana"] = 300
+	// fmt.Println(m)
+	// m["new"] = 500
+	// fmt.Println(m)
+	// fmt.Println(m["nothing"])
 
-	v, ok := m["apple"]
-	fmt.Println(v, ok)
+	// v, ok := m["apple"]
+	// fmt.Println(v, ok)
 
-	v2, ok2 := m["nothing"]
-	fmt.Println(v2, ok2)
+	// v2, ok2 := m["nothing"]
+	// fmt.Println(v2, ok2)
 
-	m2 := make(map[string]int)
-	m2["pc"] = 4000
-	fmt.Println(m2)
+	// m2 := make(map[string]int)
+	// m2["pc"] = 4000
+	// fmt.Println(m2)
 
-	// var m3 map[string]int
-	// m3["pc"] = 5000
-	// fmt.Println(m3)
+	// // var m3 map[string]int
+	// // m3["pc"] = 5000
+	// // fmt.Println(m3)
 
-	var s []int
-	if s == nil {
-		fmt.Println("Nil")
+	// var s []int
+	// if s == nil {
+	//     fmt.Println("Nil")
+	// }
+
+	// b := []byte{72, 73}
+	// fmt.Println(b)
+	// fmt.Println(string(b))
+
+	// c := []byte("HI")
+	// fmt.Println(c)
+	// fmt.Println(string(c))
+
+	r1, r2 := add(10, 20)
+	fmt.Println(r1, r2)
+
+	r3 := cal(100, 2)
+	fmt.Println(r3)
+
+	f := func(x int) {
+		fmt.Println("inner func", x)
 	}
+	f(1)
+
+	func(xx int) {
+		fmt.Println("inner func", xx)
+	}(1)
+}
+
+func add(x, y int) (int, int) {
+	fmt.Println("x + y")
+	return x + y, x - y
+}
+
+func cal(price, item int) (result int) {
+	result = price * item
+	return
 }
