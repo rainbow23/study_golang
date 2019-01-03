@@ -52,6 +52,7 @@ func main() {
 	fmt.Printf("len=%d cap=%d value=%v\n", len(n), cap(n), n)
 
 	a := make([]int, 3)
+	fmt.Printf("len=%d cap=%d value=%v\n", len(n), cap(n), a)
 	fmt.Printf("len=%d cap=%d value=%v\n", len(a), cap(a), a)
 
 	b := make([]int, 0)
@@ -59,7 +60,13 @@ func main() {
 	fmt.Printf("len=%d cap=%d value=%v\n", len(b), cap(b), b)
 	fmt.Printf("len=%d cap=%d value=%v\n", len(c), cap(c), c)
 
-	// c = make([]int, 5)
+	c = make([]int, 5)
+	for i := 1; i < 6; i++ {
+		c = append(c, i)
+		fmt.Println(c)
+	}
+	fmt.Println(c)
+
 	c = make([]int, 0, 5)
 	for i := 1; i < 6; i++ {
 		c = append(c, i)
