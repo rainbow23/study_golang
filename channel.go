@@ -5,37 +5,36 @@ import (
 )
 
 func main() {
-	// Q1. 以下の1.11をint型に変換して出力してください。
-	f := 1.11
+	fmt.Println("slice")
+	var s1 []int
+	var s2 = []int{1, 2, 3, 4}
+	s3 := []int{1, 2, 3, 4}
 
-	// fmt.Println((int)f)
+	fmt.Println(s1, len(s1), cap(s1))
+	fmt.Println(s2, len(s2), cap(s2))
+	fmt.Println(s3, len(s3), cap(s3))
 
-	i := int(f)
-	fmt.Printf("%T %v\n", i, i)
+	s3s := s3[0:2]
+	fmt.Println(s3s, len(s3s), cap(s3s))
 
-	// Q2. コードを書かずに以下の出力結果を答えてください。
-	s := []int{1, 2, 5, 6, 2, 3, 1}
-	fmt.Println(s[2:4])
+	s3sc := s3[0:2:3]
+	fmt.Println(s3sc, len(s3sc), cap(s3sc))
 
-	// expect 5, 6, 2
+	fmt.Println("map")
+	var m1 map[int]string
 
-	// Q3. 以下のコードを実行した時に
-	// fmt.Printf("%T %v", m, m)
-	// 以下のような出力結果となるmを作成してください。
-	// map[string]int map[Mike:20 Nancy:24 Messi:30]
-
-	// m := []map
-
-	m := map[string]int{
-		"Mike":  20,
-		"Nancy": 24,
-		"Messi": 30,
+	var m2 = map[string]int{
+		"dora": 0,
+		"nobi": 1,
 	}
-	// fmt.Printf("%T\n", m) //型
-	// map[string]int
 
-	// fmt.Printf("%v\n", m) //値
-	// map[Nancy:24 Messi:30 Mike:20]
+	m3 := map[string]int{
+		"shizu": 0,
+		"jai":   1,
+		"sune":  2,
+	}
 
-	fmt.Printf("%T %v\n", m, m)
+	fmt.Println(m1, len(m1))
+	fmt.Println(m2, len(m2))
+	fmt.Println(m3, len(m3))
 }
