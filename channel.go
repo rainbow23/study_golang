@@ -4,23 +4,20 @@ import (
 	"fmt"
 )
 
-func incrementGenerator() func() int {
-	x := 0
-	return func() int {
-		x++
-		return x
+func foo(params ...int) {
+	fmt.Println(len(params), params)
+	for _, param := range params {
+		fmt.Println(param)
 	}
 }
 
 func main() {
-	// x := 0
-	// increment := func() int {
-	//     x++
-	//     return x
-	// }
-	counter := incrementGenerator()
-	fmt.Println(counter())
-	fmt.Println(counter())
-	fmt.Println(counter())
-	fmt.Println(counter())
+	foo(10, 20)
+	foo(10, 20, 30)
+	foo(10, 20, 30, 40, 50, 60, 70)
+
+	s := []int{1, 2, 3}
+	// fmt.Println(s)
+
+	foo(s...)
 }
