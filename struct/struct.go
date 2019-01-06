@@ -16,7 +16,29 @@ func changeVertex2(v *Vertex) {
 	v.X = 1000
 }
 
+type Vertex2 struct {
+	X, Y int
+}
+
+func (v Vertex2) Area() int {
+	return v.X * v.Y
+}
+
+func (v *Vertex2) Scale(i int) {
+	v.X = v.X * i
+	v.Y = v.Y * i
+}
+
+func Area(v Vertex2) int {
+	return v.X * v.Y
+}
+
 func main() {
+	v1 := Vertex2{3, 4}
+	fmt.Println(Area(v1))
+	v1.Scale(10)
+	fmt.Println(v1.Area())
+
 	v := Vertex{X: 1, Y: 2}
 	changeVertex(v)
 	fmt.Println(v)
@@ -25,7 +47,7 @@ func main() {
 	changeVertex2(&v2)
 	fmt.Println(&v2)
 	fmt.Println(v2)
-	fmt.Println(*v2)
+	// fmt.Println(*v2)
 
 	/*
 	 *     fmt.Println(v.X, v.Y)
