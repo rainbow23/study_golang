@@ -1,6 +1,19 @@
 package main
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
+
+func player(table chan int) {
+	for {
+		ball := <-table
+		ball++
+		time.Sleep(100 * time.Millisecond)
+		table <- ball
+		fmt.Println(ball)
+	}
+}
 
 func main() {
 	var Ball int
