@@ -26,7 +26,6 @@ func main() {
 	var wg sync.WaitGroup
 	wg.Add(1)
 	go goroutine("hello", &wg)
-	normal("world")
 	// go goroutine("hello")
 	wg.Wait()
 }
