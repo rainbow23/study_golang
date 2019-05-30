@@ -74,7 +74,7 @@ func main() {
 	c.Nationality()
 
 	pp := Person{Name: "Dave"}
-	SpeakTo(&pp)
+	SpeakTo(&pp) // Hi, my name is Dave
 	cc := Citizen{Person: Person{Name: "Steve"}, Country: "America"}
-	SpeakTo(&cc)
+	SpeakTo(&cc) // Hello, my name is Steve and I'm from America
 }
