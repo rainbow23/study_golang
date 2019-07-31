@@ -19,7 +19,11 @@ type Dog struct {
 
 func (p *Person) Say() string {
 	p.Name = "Mr." + p.Name
-	fmt.Println(p.Name)
+	// fmt.Println(p.Name)
+	return p.Name
+}
+
+func (p *Dog) Say() string {
 	return p.Name
 }
 
@@ -38,6 +42,8 @@ func main() {
 	DriveCar(mike)
 	DriveCar(x)
 
+	DriveCar(&Dog{"Mike"})
+	DriveCar(&Person{"X"})
 	/*
 	 * var dog Dog = Dog{"dog"}
 	 * DriveCar(dog)
