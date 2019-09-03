@@ -9,8 +9,10 @@ import (
 
 func consumer(ch chan int, wg *sync.WaitGroup) {
 	for i := range ch {
-		fmt.Println("process ", i*1000)
-		wg.Done()
+		func() {
+			defer wg.Done()
+			fmt.Println("process ", i*1000)
+		}()
 	}
 	fmt.Println("##########################")
 }
